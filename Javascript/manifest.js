@@ -11,6 +11,7 @@ todoList.addEventListener('click', deleteCheck);
 // Functions
 
 function addTodo(event) {
+
     //prevent form from submitting
     event.preventDefault();
 
@@ -55,6 +56,21 @@ function deleteCheck(e) {
 
     if (item.classList[0] === 'trash-btn') {
         const todo = item.parentElement;
-        todo.remove();
+
+        // adding animation for deleting
+
+        todo.classList.add("fall");
+        todo.addEventListener("transitionend", function () {
+            todo.remove();
+        });
+
+    }
+
+    // check mark marked as completed
+
+
+    if (item.classList[0] === "complete-btn") {
+        const todo = item.parentElement;
+        todo.classList.toggle('completed');
     }
 }
