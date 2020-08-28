@@ -110,3 +110,9 @@ function filterTodo(e) {
         }
     });
 }
+
+// saving into local storage
+
+function SaveLocalTodos(todo) {
+    // checking to see if anything is already saved inside local storage
+}
